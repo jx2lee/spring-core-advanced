@@ -1,0 +1,4 @@
+k00:08:39.910 [Test worker] INFO io.github.jx2lee.advanced.trace.hellotrace.HelloTraceV1 - [4bdfdf14] hello
+t00:08:39.915 [Test worker] INFO io.github.jx2lee.advanced.trace.hellotrace.HelloTraceV1 - [4bdfdf14] hello time=6ms
+k00:08:40.256 [Test worker] INFO io.github.jx2lee.advanced.trace.hellotrace.HelloTraceV1 - [59fc9537] hello
+z00:08:40.256 [Test worker] INFO io.github.jx2lee.advanced.trace.hellotrace.HelloTraceV1 - [59fc9537] hello time=0ms ex={}
