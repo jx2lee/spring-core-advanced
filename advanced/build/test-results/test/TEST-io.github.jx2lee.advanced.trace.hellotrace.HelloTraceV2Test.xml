@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.github.jx2lee.advanced.trace.hellotrace.HelloTraceV2Test" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-18T02:23:55" hostname="NHN.local" time="0.379">
+  <properties/>
+  <testcase name="begin_exceptions_mock()" classname="io.github.jx2lee.advanced.trace.hellotrace.HelloTraceV2Test" time="0.379"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
