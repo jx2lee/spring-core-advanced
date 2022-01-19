@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="io.github.jx2lee.advanced.trace.logtrace.FieldLogTraceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-01-18T09:34:39" hostname="NHN.local" time="0.476">
-  <properties/>
-  <testcase name="begin_exception_level2_mock()" classname="io.github.jx2lee.advanced.trace.logtrace.FieldLogTraceTest" time="0.476"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
