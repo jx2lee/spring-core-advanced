@@ -1,13 +1,13 @@
 package io.github.jx2lee.advanced.trace.threadlocal;
 
-import io.github.jx2lee.advanced.trace.threadlocal.code.FieldService;
+import io.github.jx2lee.advanced.trace.threadlocal.code.ThreadLocalFieldService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 @Slf4j
-public class FiledServiceTest {
+public class ThreadLocalFieldServiceTest {
 
-    private FieldService fieldService = new FieldService();
+    private ThreadLocalFieldService fieldService = new ThreadLocalFieldService();
 
     @Test
     void field() {
@@ -21,8 +21,6 @@ public class FiledServiceTest {
         threadB.setName("Thread-B");
 
         threadA.start();
-        // sleep(2000); // 동시성 문제 발생 X
-        sleep(100); // 동시성 문제 발생 O
         threadB.start();
 
         sleep(3000); // 메인 쓰레드 종료 대기
