@@ -44,4 +44,25 @@ public class TemplateMethodTest {
         AbstractTemplate subClassLogic2 = new SubClassLogic2();
         subClassLogic2.excute();
     }
+    
+    @Test
+    void templateMethodV2() {
+        AbstractTemplate template1 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비즈니스 로직1 실행");
+            }
+        };
+        System.out.println("template1.getClass() = " + template1.getClass());
+        template1.excute();
+
+        AbstractTemplate template2 = new AbstractTemplate() {
+            @Override
+            protected void call() {
+                log.info("비즈니스 로직2 실행");
+            }
+        };
+        System.out.println("template2.getClass() = " + template2.getClass());
+        template2.excute();
+    }
 }
