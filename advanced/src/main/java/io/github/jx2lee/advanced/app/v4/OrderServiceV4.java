@@ -3,6 +3,7 @@ package io.github.jx2lee.advanced.app.v4;
 import io.github.jx2lee.advanced.trace.TraceStatus;
 import io.github.jx2lee.advanced.trace.logtrace.LogTrace;
 import io.github.jx2lee.advanced.trace.logtrace.ThreadLocalLogTrace;
+import io.github.jx2lee.advanced.trace.template.AbstractTemplate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,14 +16,13 @@ public class OrderServiceV4 {
 
     public void orderItem(String itemId){
 
-        TraceStatus status = null;
-        try {
-            status = trace.begin("OrderService.orderItem()");
-            orderRepository.save(itemId);
-            trace.end(status);
-        } catch (Exception e) {
-            trace.exception(status, e);
-            throw e;
-        }
+        AbstractTemplate<Void> template = new AbstractTemplate<Void>(trace) {
+            @Override
+            protected Void call() {
+                orderRepository.save(itemId);
+                return null;
+            }
+        };
+        template.execute("OrderService.orderItem()");
     }
 }

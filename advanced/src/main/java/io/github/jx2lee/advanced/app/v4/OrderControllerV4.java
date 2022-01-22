@@ -3,6 +3,7 @@ package io.github.jx2lee.advanced.app.v4;
 import io.github.jx2lee.advanced.trace.TraceStatus;
 import io.github.jx2lee.advanced.trace.logtrace.LogTrace;
 import io.github.jx2lee.advanced.trace.logtrace.ThreadLocalLogTrace;
+import io.github.jx2lee.advanced.trace.template.AbstractTemplate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,17 +16,14 @@ public class OrderControllerV4 {
 
     @GetMapping("/v4/request")
     public String request(String itemId) {
+        AbstractTemplate<String> template = new AbstractTemplate<>(trace) {
+            @Override
+            protected String call() {
+                orderService.orderItem(itemId);
+                return "ok";
+            }
+        };
 
-        TraceStatus status = null;
-        try {
-            status = trace.begin("OrderController.request()");
-            orderService.orderItem(itemId);
-            trace.end(status);
-            return "ok";
-        } catch (Exception e) {
-            trace.exception(status, e);
-            // 로그는 애플리케이션 흐름에 영향을 주면 안된다. 고로 exception 을 반환해야한다. (thorw)
-            throw e;
-        }
+        return template.execute("OrderController.request()");
     }
 }
