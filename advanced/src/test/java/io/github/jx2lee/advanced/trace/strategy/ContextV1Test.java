@@ -1,5 +1,8 @@
 package io.github.jx2lee.advanced.trace.strategy;
 
+import io.github.jx2lee.advanced.trace.strategy.code.strategy.ContextV1;
+import io.github.jx2lee.advanced.trace.strategy.code.strategy.StrategyLogic1;
+import io.github.jx2lee.advanced.trace.strategy.code.strategy.StrategyLogic2;
 import io.github.jx2lee.advanced.trace.template.code.AbstractTemplate;
 import io.github.jx2lee.advanced.trace.template.code.SubClassLogic1;
 import io.github.jx2lee.advanced.trace.template.code.SubClassLogic2;
@@ -33,5 +36,16 @@ public class ContextV1Test {
         long endTime = System.currentTimeMillis();
         long resultTime = endTime - startTime;
         log.info("resultTime={}", resultTime);
+    }
+
+    @Test
+    void strategyV1() {
+        StrategyLogic1 strategyLogic1 = new StrategyLogic1();
+        ContextV1 context1 = new ContextV1(strategyLogic1);
+        context1.execute();
+
+        StrategyLogic2 strategyLogic2 = new StrategyLogic2();
+        ContextV1 context2 = new ContextV1(strategyLogic2);
+        context2.execute();
     }
 }
