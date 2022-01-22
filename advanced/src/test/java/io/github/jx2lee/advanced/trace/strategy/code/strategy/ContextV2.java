@@ -1,19 +1,14 @@
 package io.github.jx2lee.advanced.trace.strategy.code.strategy;
 
 import lombok.extern.slf4j.Slf4j;
+
 /*
-* 필드에 전략을 보관하는 방법
+* 전략을 파라미터로 전달받는 방법
  */
 @Slf4j
-public class ContextV1 {
+public class ContextV2 {
 
-    private Strategy strategy;
-
-    public ContextV1(Strategy strategy) {
-        this.strategy = strategy;
-    }
-
-    public void execute() {
+    public void execute(Strategy strategy) {
         long startTime = System.currentTimeMillis();
         strategy.call(); // 위임
         long endTime = System.currentTimeMillis();
