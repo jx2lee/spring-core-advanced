@@ -1,7 +1,7 @@
-package hello.proxy.trace.template;
+package io.github.jx2lee.proxy.trace.template;
 
-import hello.proxy.trace.TraceStatus;
-import hello.proxy.trace.logtrace.LogTrace;
+import io.github.jx2lee.proxy.trace.TraceStatus;
+import io.github.jx2lee.proxy.trace.logtrace.LogTrace;
 
 public abstract class AbstractTemplate<T> {
 

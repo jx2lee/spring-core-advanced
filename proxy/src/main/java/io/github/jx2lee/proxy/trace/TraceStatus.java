@@ -1,4 +1,4 @@
-package hello.proxy.trace;
+package io.github.jx2lee.proxy.trace;
 
 public class TraceStatus {
 

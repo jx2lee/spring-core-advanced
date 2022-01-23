@@ -1,7 +1,7 @@
-package hello.proxy.trace.logtrace;
+package io.github.jx2lee.proxy.trace.logtrace;
 
-import hello.proxy.trace.TraceId;
-import hello.proxy.trace.TraceStatus;
+import io.github.jx2lee.proxy.trace.TraceId;
+import io.github.jx2lee.proxy.trace.TraceStatus;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

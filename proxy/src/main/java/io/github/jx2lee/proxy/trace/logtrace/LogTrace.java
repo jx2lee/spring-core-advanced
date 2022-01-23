@@ -1,6 +1,6 @@
-package hello.proxy.trace.logtrace;
+package io.github.jx2lee.proxy.trace.logtrace;
 
-import hello.proxy.trace.TraceStatus;
+import io.github.jx2lee.proxy.trace.TraceStatus;
 
 public interface LogTrace {
 
