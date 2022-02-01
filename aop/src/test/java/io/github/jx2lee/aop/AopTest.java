@@ -2,10 +2,7 @@ package io.github.jx2lee.aop;
 
 import io.github.jx2lee.aop.order.OrderRepository;
 import io.github.jx2lee.aop.order.OrderService;
-import io.github.jx2lee.aop.order.aop.AspectV1;
-import io.github.jx2lee.aop.order.aop.AspectV2;
-import io.github.jx2lee.aop.order.aop.AspectV3;
-import io.github.jx2lee.aop.order.aop.AspectV4Pointcut;
+import io.github.jx2lee.aop.order.aop.*;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.ThrowableAssert;
@@ -21,7 +18,8 @@ import org.springframework.context.annotation.Import;
 // @Import(AspectV1.class)
 // @Import(AspectV2.class)
 // @Import(AspectV3.class)
-@Import(AspectV4Pointcut.class)
+// @Import(AspectV4Pointcut.class)
+@Import({AspectV5Order.LogAspect.class, AspectV5Order.TxAspect.class})
 public class AopTest {
 
     @Autowired
