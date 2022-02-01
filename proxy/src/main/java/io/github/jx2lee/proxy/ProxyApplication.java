@@ -9,6 +9,7 @@ import io.github.jx2lee.proxy.config.v2_dynamicproxy.DynamicProxyFilterConfig;
 import io.github.jx2lee.proxy.config.v3_proxyfactory.ProxyFactoryConfigV1;
 import io.github.jx2lee.proxy.config.v3_proxyfactory.ProxyFactoryConfigV2;
 import io.github.jx2lee.proxy.config.v4_postprocessor.BeanPostProcessorConfig;
+import io.github.jx2lee.proxy.config.v5_autoproxy.AutoProxyConfig;
 import io.github.jx2lee.proxy.trace.logtrace.LogTrace;
 import io.github.jx2lee.proxy.trace.logtrace.ThreadLocalLogTrace;
 import org.springframework.boot.SpringApplication;
@@ -23,7 +24,8 @@ import org.springframework.context.annotation.Import;
 // @Import(DynamicProxyFilterConfig.class)
 // @Import(ProxyFactoryConfigV1.class)
 // @Import(ProxyFactoryConfigV2.class)
-@Import(BeanPostProcessorConfig.class)
+// @Import(BeanPostProcessorConfig.class)
+@Import(AutoProxyConfig.class)
 @SpringBootApplication(scanBasePackages = "io.github.jx2lee.proxy.app") //주의, config 패키지는 자동 component 스캔 대상이 되지 않도록 하기 위해 Base package 설정
 public class ProxyApplication {
 
