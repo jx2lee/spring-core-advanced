@@ -2,6 +2,7 @@ package io.github.jx2lee.aop;
 
 import io.github.jx2lee.aop.order.OrderRepository;
 import io.github.jx2lee.aop.order.OrderService;
+import io.github.jx2lee.aop.order.aop.AspectV1;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.ThrowableAssert;
@@ -10,9 +11,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 
 @Slf4j
 @SpringBootTest
+@Import(AspectV1.class)
 public class AopTest {
 
     @Autowired
