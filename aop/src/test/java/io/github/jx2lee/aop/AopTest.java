@@ -4,6 +4,7 @@ import io.github.jx2lee.aop.order.OrderRepository;
 import io.github.jx2lee.aop.order.OrderService;
 import io.github.jx2lee.aop.order.aop.AspectV1;
 import io.github.jx2lee.aop.order.aop.AspectV2;
+import io.github.jx2lee.aop.order.aop.AspectV3;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.ThrowableAssert;
@@ -17,7 +18,8 @@ import org.springframework.context.annotation.Import;
 @Slf4j
 @SpringBootTest
 // @Import(AspectV1.class)
-@Import(AspectV2.class)
+// @Import(AspectV2.class)
+@Import(AspectV3.class)
 public class AopTest {
 
     @Autowired
